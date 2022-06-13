@@ -7,17 +7,9 @@
     "start": "node ./server/index.js",
     "dev": "nodemon ./server/index.js"
   },
-  "repository": {
-    "type": "git",
-    "url": "git+https://github.com/hoseinABH98/gql-mern.git"
-  },
   "keywords": [],
   "author": "Hosein abh",
   "license": "ISC",
-  "bugs": {
-    "url": "https://github.com/hoseinABH98/gql-mern/issues"
-  },
-  "homepage": "https://github.com/hoseinABH98/gql-mern#readme",
   "dependencies": {
     "colors": "^1.4.0",
     "cors": "^2.8.5",
