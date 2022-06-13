@@ -132,6 +132,37 @@ const Mutation = new GraphQLObjectType({
         return Project.findByIdAndRemove(args.id);
       },
     },
+    updateProject: {
+      type: ProjectType,
+      args: {
+        id: { type: GraphQLNonNull(GraphQLID) },
+        name: { type: GraphQLString },
+        description: { type: GraphQLString },
+        status: {
+          type: new GraphQLEnumType({
+            name: 'UpdatedProjectStatus',
+            values: {
+              IN_PROGRESS: { value: 'In Progress' },
+              COMPLETED: { value: 'Completed' },
+              NEW: { value: 'Not Started' },
+            },
+          }),
+        },
+      },
+      resolve: (parent, args) => {
+        return Project.findByIdAndUpdate(
+          args.id,
+          {
+            $set: {
+              name: args.name,
+              description: args.description,
+              status: args.status,
+            },
+          },
+          { new: true }
+        );
+      },
+    },
   },
 });
 
