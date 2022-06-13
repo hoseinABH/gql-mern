@@ -13,7 +13,7 @@ export default function AddClientModal() {
   const [name, setName] = useState('');
   const [description, setDescription] = useState('');
   const [clientId, setClientId] = useState('');
-  const [status, setStatus] = useState('new');
+  const [status, setStatus] = useState('NEW');
 
   const [addProject] = useMutation(ADD_PROJECT, {
     variables: { name, description, clientId, status },
@@ -111,9 +111,9 @@ export default function AddClientModal() {
                         value={status}
                         onChange={(e) => setStatus(e.target.value)}
                       >
-                        <option value="new">Not Started</option>
-                        <option value="progress">In Progress</option>
-                        <option value="completed">Completed</option>
+                        <option value="NEW">Not Started</option>
+                        <option value="IN_PROGRESS">In Progress</option>
+                        <option value="COMPLETED">Completed</option>
                       </select>
                     </div>
 
